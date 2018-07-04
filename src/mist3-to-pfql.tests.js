@@ -103,7 +103,7 @@ describe('mist3-to-pfql', function() {
 		const output = mist3ToPfql(input)
 		expect(output.t).eql(expected)
 	})
-	it('should parse correctly this one too', function() {
+	it('should parse correctly with pfam31', function() {
 		const input = {
 			pfam31:
 			[ { name: 'Bac_DnaA',
