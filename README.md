@@ -20,4 +20,5 @@ const pfqlCompatible = mist2pfql.parse(mist3Output)
 ## mist3 tools supported
 
 * pfam30
+* pfam31
 * tmhmm2
