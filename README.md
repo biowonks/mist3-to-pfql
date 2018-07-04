@@ -13,8 +13,8 @@ $ npm install mist3-to-pfql
 
 ## Usage
 ```javascript
-const mist3TpPfql = require('mist3-to-pfql')
-const pfqlCompatible = mist3TpPfql(mist3Output)
+const mist2pfql = require('mist3-to-pfql')
+const pfqlCompatible = mist2pfql.parse(mist3Output)
 ```
 
 ## mist3 tools supported
