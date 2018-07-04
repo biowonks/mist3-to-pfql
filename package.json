@@ -1,6 +1,6 @@
 {
   "name": "mist3-to-pfql",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Parse MiST3 standard output to make it compatible with PFQL",
   "main": "index.js",
   "scripts": {
