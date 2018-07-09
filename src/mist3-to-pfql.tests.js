@@ -202,6 +202,70 @@ describe('mist3-to-pfql', function() {
 		const output = mist3ToPfql(input)
 		expect(output.t).eql(expected)
 	})
+	it.only('It should parse SO_4286 correctly', function() {
+		const input = {
+			pfam31: [
+				{
+					name: 'OmpA',
+					score: 67.6,
+					bias: 0,
+					c_evalue: 1.1e-22,
+					i_evalue: 9e-19,
+					hmm_from: 1,
+					hmm_to: 95,
+					hmm_cov: [],
+					ali_from: 157,
+					ali_to: 255,
+					ali_cov: '..',
+					env_from: 157,
+					env_to: 255,
+					env_cov: '..',
+					acc: 0.94
+				},
+				{
+					name: 'MotB_plug',
+					score: 63.3,
+					bias: 0.6,
+					c_evalue: 1.2e-21,
+					i_evalue: 1e-17,
+					hmm_from: 2,
+					hmm_to: 56,
+					hmm_cov: '..',
+					ali_from: 2,
+					ali_to: 53,
+					ali_cov: '..',
+					env_from: 1,
+					env_to: 55,
+					env_cov: '[.',
+					acc: 0.84
+				}
+			],
+			agfam2: [],
+			ecf1: [],
+			id: 'fjhLzcsdzMQsEhV2MBtX6Q',
+			length: 275,
+			sequence: 'MKKKKVDPPENHERWLISYADFMTLLFALFVVLYSFAMSDKNEAKFMVEGLIDSLSKIGLISTPAVNALAPGGTSILEPNTVTSAVDAEPKLIETATTAPSTSESNNDLTNAKSNDTIRKYKEIISAKLKNEIENQEVEIDEVSDNLIIRIGDNNTFFASGSAFIQPKFIPLIDKIGEVIASVPGRVVIAGHTDATLPMEIYADNWDLSSLRATAVVRIMTKNKGVNPSRIIVQGLADTQPRFQNDTPEHRQKNRRIEIILNQGNTVESHIPIPE',
+			segs: [
+				[
+					94,
+					105
+				]
+			],
+			coils: [
+				[
+					126,
+					146
+				]
+			],
+			tmhmm2: null
+		}
+		const expected = {
+			pfam31: [
+				['OmpA', 157, 255],
+				['MotB_plug', 1, 55]
+			]
+		}
+		const output = mist3ToPfql(input)
+		expect(output.t).eql(expected)
+	})
 })
-
-
